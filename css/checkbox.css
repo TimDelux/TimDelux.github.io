@@ -1,0 +1,165 @@
+/*======================
+ Common Style 
+========================*/
+body {
+  background-color: #fff;
+}
+
+a.back-to-article {
+  width: 100%;
+  float: left;
+  padding: 10px 0px;
+  margin-bottom: 30px;
+  background: #333;
+  color: #fff;
+  text-align: left;
+  text-indent: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+a.back-to-article.back-to-article:hover {
+  color: #b95ed5;
+}
+
+a.github {
+  width: 150px;
+  right: -32px;
+  top: 27px;
+  position: fixed;
+  padding: 5px 0 8px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  background-color: #b95ed5;
+  text-transform: capitalize;
+  text-align: center;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  z-index: 111;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+a.github:hover {
+  background-color: #fff;
+  color: #b95ed5;
+}
+
+main {
+  width: 95%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+main h1 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  text-transform: none;
+}
+main h2 {
+  padding: 15px 20px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: left;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.5);
+}
+main section {
+  width: 100%;
+  height: auto;
+  float: left;
+  display: block;
+  margin: 0 auto;
+  padding: 30px 0 0;
+}
+main section li,
+main section a {
+  display: block;
+}
+main section li {
+  width: 12.25%;
+  height: auto;
+  float: left;
+  position: relative;
+  padding: 30px 0;
+}
+main section li:nth-child(8n + 1) {
+  clear: left;
+}
+
+/*---- View < 1024px ----*/
+@media (max-width: 1024px) {
+  main section li {
+    width: 50%;
+  }
+  main section li:nth-child(4n + 1) {
+    clear: none;
+  }
+  main section li:nth-child(2n + 1) {
+    clear: left;
+  }
+}
+/*---- View < 450px ----*/
+@media (max-width: 450px) {
+  main section li {
+    width: 100%;
+  }
+}
+/*======================
+Check Boxes Styles
+========================*/
+input[type="checkbox"] {
+  opacity: 0;
+  z-index: -1;
+}
+
+input[type="checkbox"] + label {
+  width: 22px;
+  height: 22px;
+  display: block;
+  position: relative;
+
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  text-indent: -999px;
+  overflow: hidden;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+/*-------------------
+  #checkbox-n style
+  ------------------*/
+input[type="checkbox"]#checkbox-n + label {
+  border: 1px solid #000;
+  background: transparent;
+}
+
+input[type="checkbox"]#checkbox-n + label:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 1);
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  transition: all 0.4s cubic-bezier(1, 0, 0.4, 0.5);
+  -webkit-transition: all 0.4s cubic-bezier(1, 0, 0.4, 0.5);
+}
+
+input[type="checkbox"]#checkbox-n:checked + label:before {
+  transition: all 0.4s cubic-bezier(1, 0, 0.4, 1);
+  -webkit-transition: all 0.4s cubic-bezier(1, 0, 0.4, 1);
+  transform: scale(1);
+  -webkit-transform: scale(1);
+}
